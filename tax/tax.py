@@ -10,10 +10,26 @@ import time
 # inp_1 bot /\ oup_3 bot /\ oup_1 RI /\ 9 * om_2 = om_0 /\ oup_2 y_0 = RECEIVER
 
 
-K0 = tx_load("K0.json")
+K0 = tx_load("K0.json") #0
+K1 = tx_load("K1.json") #1
+K2 = tx_load("K2.json") #2
+K3 = tx_load("K3.json") #3
 
-(G, res, resCount) = process_tx([], K0)
-print(res, resCount)
+U1 = tx_load("U1.json") #4
+U2 = tx_load("U2.json") #5
+U3 = tx_load("U3.json") #6
+
+(G, res0, resCount) = process_tx([], K0, 0)
+print(res0, resCount)
+
+(G, res1, resCount) = process_tx(G, K1, resCount)
+print(res1, resCount)
+
+(G, res2, resCount) = process_tx(G, K2, resCount)
+print(res2, resCount)
+
+(G, res3, resCount) = process_tx(G, K3, resCount)
+print(res3, resCount)
 
 print(eval_bexpr([K0], K0, K0["RI"]))
 

@@ -328,11 +328,15 @@ def eval_bexpr(G, tx, b):   # to "T"/"F"/"U"
 		else:
 			return "U"
 	elif b["op"] == "BRI":
-		if tx["out"][b["lhs"]] < len(G):
+		if b["lhs"] < len(tx["out"]) and tx["out"][b["lhs"]] < len(G):
 			txo = G[tx["out"][b["lhs"]]]
+			evalLam = []
 			for i in range(len(b["rhs"])):
-				evalLam[i] = eval_aexpr(G, tx, b["rhs"][i])
-			return txo["RI"] == tx["RI"] and txo["lambda"] == evalLam
+				evalLam.append(eval_aexpr(G, tx, b["rhs"][i]))
+			if txo["RI"] == tx["RI"] and txo["lambda"] == evalLam:
+				return "T"
+			else:
+				return "F"
 		else:
 			return "U"
 
@@ -401,19 +405,21 @@ def eval_bexpr_count(G, tx, b):   # to Int
 		else:
 			return 0
 
-def process_tx(G, tx):
+def process_tx(G, tx, accumulateCount):
 	G = G + [tx]
+	# tx's shall be added in order
 	res = eval_bexpr(G, tx, tx["RI"])
 	resCount = eval_bexpr_count(G, tx, tx["RI"])
 	if res:
 		inpList = tx["in"]
 		for i in inpList:
+			assert i < len(G)
 			prevRes = eval_bexpr(G, G[i], G[i]["RI"])
 			resCount += eval_bexpr_count(G, G[i], G[i]["RI"])
 			if not prevRes:
 				res = False
 				break
-	return (G, res, resCount)
+	return (G, res, resCount + accumulateCount)
 
 def tx_load(addr):
 	with open(addr) as f:
