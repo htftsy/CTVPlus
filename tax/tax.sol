@@ -17,7 +17,7 @@ contract tax {
         amountTotal += msg.value;
     }
 
-    function sendMoney(     // K1, K2, K3
+    function sendMoney(     // K0, K1, K2, K3
         address payable target, 
         uint256 amount, 
         uint256 amountTax
@@ -30,3 +30,16 @@ contract tax {
         amountTotal -= amountTax + amount;
     }
 }
+/*
+Execution (rather than tx or total) cost only:
+K0: 283767 (constructor) + 22429 (charge) + 79851 (sendMoney)
+K1: 79851 (sendMoney)
+K2: 79851 (sendMoney)
+K3: 79851 (sendMoney)
+
+Accumulation:
+K0: 283767+22429+79851 = 386047
+K1: 465898
+K2: 545749
+K3: 625600
+*/
