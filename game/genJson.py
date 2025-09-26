@@ -32,6 +32,31 @@ rhsCase1 = {
 }
 
 CorrWin = {
+	"op": "Band",
+	"lhs": {
+		"op": "Bto",
+		"lhs": {
+			"op": "BlessG",
+			"lhs": { # |Rnd - inp_0 y_1|
+			},
+			"rhs": { # |Rnd - inp_1 y_1|
+			}
+		},
+		"rhs": { # oup_0 y_0 = inp_0 y_0
+		}
+	},
+	"rhs": {
+		"op": "Bto",
+		"lhs": {
+			"op": "BlessG",
+			"lhs": { # |Rnd - inp_1 y_1|
+			},
+			"rhs": { # |Rnd - inp_0 y_1|
+			}
+		},
+		"rhs": { # oup_0 y_0 = inp_1 y_0
+		}
+	}
 }
 
 rhsCase2 = {
