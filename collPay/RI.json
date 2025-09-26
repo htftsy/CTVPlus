@@ -115,19 +115,51 @@
 			"op": "Band",
 			"lhs": {
 				"_hint": "oup_0 RI(lambda_0 + 1)",
+				"op": "BRI",
+				"lhs": 0,
+				"rhs": [
+					{
+						"op": "Aadd",
+						"lhs": {
+							"op": "Asymbol",
+							"lhs": {
+								"op": "Asymlam",
+								"n": 0
+							}
+						},
+						"rhs": {
+							"op": "Anum",
+							"lhs": 1
+						}
+					}
+				]
 			},
 			"rhs": {
 				"_hint": "oup_0 inp_1 Bot",
+				"op": "Boup",
+				"lhs": 0,
+				"rhs": {
+					"op": "Binp",
+					"lhs": 1,
+					"rhs": {
+						"op": "Bbot"
+					}
+				}
 			}
 		},
 		"rhs": {
 			"_hint": "om_1 = 1",
 			"op": "BeqA",
 			"lhs": {
-				
+				"op": "Asymbol",
+				"lhs": {
+					"op": "Asymom",
+					"n": 1
+				}
 			},
 			"rhs": {
-
+				"op": "Anum",
+				"lhs": 1
 			}
 		}
 	}
