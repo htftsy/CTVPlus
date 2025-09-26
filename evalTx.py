@@ -323,7 +323,7 @@ def eval_bexpr(G, tx, b):   # to "T"/"F"/"U"
 	elif b["op"] == "Boup":
 		if b["lhs"] >= len(tx["out"]):
 			return "U"
-		if tx["in"][b["lhs"]] < len(G):
+		if tx["out"][b["lhs"]] < len(G):
 			return eval_bexpr(G, G[tx["out"][b["lhs"]]], b["rhs"])
 		else:
 			return "U"
@@ -392,7 +392,7 @@ def eval_bexpr_count(G, tx, b):   # to Int
 	elif b["op"] == "Boup":
 		if b["lhs"] >= len(tx["out"]):
 			return 0
-		if tx["in"][b["lhs"]] < len(G):
+		if tx["out"][b["lhs"]] < len(G):
 			return eval_bexpr_count(G, G[tx["out"][b["lhs"]]], b["rhs"])
 		else:
 			return 0

@@ -17,10 +17,6 @@ K1 = tx_load("K1.json") #1
 K2 = tx_load("K2.json") #2
 K3 = tx_load("K3.json") #3
 
-U1 = tx_load("U1.json") #4
-U2 = tx_load("U2.json") #5
-U3 = tx_load("U3.json") #6
-
 (G, res0, resCount) = process_tx([], K0, 0)
 print(res0, resCount)
 
@@ -33,6 +29,12 @@ print(res2, resCount)
 (G, res3, resCount) = process_tx(G, K3, resCount)
 print(res3, resCount)
 
+
+U1 = tx_load("U1.json") #4
+U2 = tx_load("U2.json") #5
+U3 = tx_load("U3.json") #6
+U4 = tx_load("U4.json") #6
+
 (G, res4, resCount) = process_tx(G, U1, resCount)
 print(res4, resCount)
 
@@ -42,18 +44,21 @@ print(res5, resCount)
 (G, res6, resCount) = process_tx(G, U3, resCount)
 print(res6, resCount)
 
-# json_data = json.dumps(data["lhs"], separators=(",", ":"))
+(G, res7, resCount) = process_tx(G, U4, resCount)
+print(res7, resCount)
+
 
 """
 Execution Results:
 ---------
 Tx | Acc.
 ---------
-K0 | 29
-K1 | 402
-K2 | 775
-K3 | 1148
-U1 | 1492
-U2 | 1836
-U3 | 2180
+K0 | 3084
+K1 | 9873
+K2 | 16662
+K3 | 23451
+U1 | 27156
+U2 | 30861
+U3 | 34566
+U4 | 37650
 """
