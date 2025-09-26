@@ -31,18 +31,27 @@ print(res2, resCount)
 (G, res3, resCount) = process_tx(G, K3, resCount)
 print(res3, resCount)
 
-print(eval_bexpr([K0], K0, K0["RI"]))
+(G, res4, resCount) = process_tx(G, U1, resCount)
+print(res4, resCount)
+
+(G, res5, resCount) = process_tx(G, U2, resCount)
+print(res5, resCount)
+
+(G, res6, resCount) = process_tx(G, U3, resCount)
+print(res6, resCount)
 
 # json_data = json.dumps(data["lhs"], separators=(",", ":"))
 
-"""Execution Results:
+"""
+Execution Results:
+---------
 Tx | Acc.
--------
+---------
 K0 | 29
 K1 | 402
 K2 | 775
 K3 | 1148
-U1 | 
-U2 | 
-U3 | 
+U1 | 1492
+U2 | 1836
+U3 | 2180
 """
