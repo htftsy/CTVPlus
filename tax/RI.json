@@ -57,12 +57,12 @@
 		"op": "BeqG",
 		"lhs": {
 			"op": "Goup",
-				"lhs": 3,
+				"lhs": 2,
 				"rhs": {
 					"op": "Gsymbol",
 					"lhs": {
 						"op": "Gsymy",
-						"n": 1
+						"n": 0
 					}
 				}
 		},

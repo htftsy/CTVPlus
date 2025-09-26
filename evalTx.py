@@ -415,3 +415,9 @@ def process_tx(G, tx):
 				break
 	return (G, res, resCount)
 
+def tx_load(addr):
+	with open(addr) as f:
+		tx = json.load(f)
+	with open(tx["RIurl"]) as f:
+		tx["RI"] = json.load(f)
+	return tx
