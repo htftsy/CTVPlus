@@ -1,0 +1,134 @@
+{
+	"op": "Band",
+	"lhs": {
+		"op": "Band",
+		"lhs": {
+			"op": "Band",
+			"lhs": {
+				"_hint": "y_1 ^ (y_0 * y_3) = y_2",
+				"op": "BeqG",
+				"lhs": {
+					"op": "Gpow",
+					"lhs": {
+						"op": "Gsymbol",
+						"lhs": {
+							"op": "Gsymy",
+							"n": 1
+						}
+					},
+					"rhs": {
+						"op": "Gmul",
+						"lhs": {
+							"op": "Gsymbol",
+							"lhs": {
+								"op": "Gsymy",
+								"n": 0
+							}
+						},
+						"rhs": {
+							"op": "Gsymbol",
+							"lhs": {
+								"op": "Gsymy",
+								"n": 3
+							}
+						}
+					}
+				},
+				"rhs": {
+					"op": "Gsymbol",
+					"lhs": {
+						"op": "Gsymy",
+						"n": 2
+					}
+				}
+			},
+			"rhs": {
+				"_hint": "oup_0 y_1 = y_1",
+				"op": "BeqG",
+				"lhs": {
+					"op": "Goup",
+					"lhs": 0,
+					"rhs": {
+						"op": "Gsymbol",
+						"lhs": {
+							"op": "Gsymy",
+							"n": 1
+						}
+					}
+				},
+				"rhs": {
+					"op": "Gsymbol",
+					"lhs": {
+						"op": "Gsymy",
+						"n": 1
+					}
+				}
+			}
+		},
+		"rhs": {
+			"op": "Band",
+			"lhs": {
+				"_hint": "oup_0 y_2 = y_2",
+				"op": "BeqG",
+				"lhs": {
+					"op": "Goup",
+					"lhs": 0,
+					"rhs": {
+						"op": "Gsymbol",
+						"lhs": {
+							"op": "Gsymy",
+							"n": 2
+						}
+					}
+				},
+				"rhs": {
+					"op": "Gsymbol",
+					"lhs": {
+						"op": "Gsymy",
+						"n": 2
+					}
+				}
+			},
+			"rhs": {
+				"_hint": "Ver(y_0, sig_0)",
+				"op": "BVerG",
+				"lhs": {
+					"op": "Gsymbol",
+					"lhs": {
+						"op": "Gsymy",
+						"n": 0
+					}
+				},
+				"rhs": {
+					"op": "Gsymbol",
+					"lhs": {
+						"op": "Gsigma",
+						"n": 0
+					}
+				}
+			}
+		}
+	},
+	"rhs": {
+		"op": "Band",
+		"lhs": {
+			"op": "Band",
+			"lhs": {
+				"_hint": "oup_0 RI(lambda_0 + 1)",
+			},
+			"rhs": {
+				"_hint": "oup_0 inp_1 Bot",
+			}
+		},
+		"rhs": {
+			"_hint": "om_1 = 1",
+			"op": "BeqA",
+			"lhs": {
+				
+			},
+			"rhs": {
+
+			}
+		}
+	}
+}
