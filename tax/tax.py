@@ -36,11 +36,13 @@ print(eval_bexpr([K0], K0, K0["RI"]))
 # json_data = json.dumps(data["lhs"], separators=(",", ":"))
 
 """Execution Results:
-K0
-K1
-K2
-K3
-U1
-U2
-U3
+Tx | Acc.
+-------
+K0 | 29
+K1 | 402
+K2 | 775
+K3 | 1148
+U1 | 
+U2 | 
+U3 | 
 """
