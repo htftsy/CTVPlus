@@ -23,7 +23,9 @@
 			"op": "Band",
 			"lhs": {
 				"op": "BRI",
-				"lhs": 1
+				"lhs": 1,
+				"rhs": [
+				]
 			},
 			"rhs": {
 				"op": "BeqA",

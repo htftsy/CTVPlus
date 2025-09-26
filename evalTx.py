@@ -58,6 +58,8 @@ def eval_aexpr(G, tx, a):
 		return tx["im"][a["lhs"]["n"]]
 	elif a['op'] == "Asymbol" and a["lhs"]["op"] == "Asymom":
 		return tx["om"][a["lhs"]["n"]]
+	elif a['op'] == "Asymbol" and a["lhs"]["op"] == "Asymlam":
+		return tx["lambda"][a["lhs"]["n"]]
 
 def eval_aexpr_count(G, tx, a):
 	if a["op"] == "Anum":
@@ -109,6 +111,8 @@ def eval_aexpr_count(G, tx, a):
 	elif a['op'] == "Asymbol" and a["lhs"]["op"] == "Asymim":
 		return 3
 	elif a['op'] == "Asymbol" and a["lhs"]["op"] == "Asymom":
+		return 3
+	elif a['op'] == "Asymbol" and a["lhs"]["op"] == "Asymlam":
 		return 3
 
 def eval_gexpr(G, tx, a):
@@ -326,7 +330,9 @@ def eval_bexpr(G, tx, b):   # to "T"/"F"/"U"
 	elif b["op"] == "BRI":
 		if tx["out"][b["lhs"]] < len(G):
 			txo = G[tx["out"][b["lhs"]]]
-			return txo["RI"] == tx["RI"]
+			for i in range(len(b["rhs"])):
+				evalLam[i] = eval_aexpr(G, tx, b["rhs"][i])
+			return txo["RI"] == tx["RI"] and txo["lambda"] == evalLam
 		else:
 			return "U"
 
