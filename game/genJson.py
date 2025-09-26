@@ -55,13 +55,13 @@ rhsCase2 = {
 	},
 	"rhs": {
 		"op": "Band",
-		"lhs": { # oup_1 bot
+		"lhs": { 
 			"op": "Band",
 			"lhs": CorrWin,
-			"rhs": { # oup_0 out_1 = 0
+			"rhs": { # oup_1 bot
 			}
 		},
-		"rhs": {
+		"rhs": { # oup_0 out_1 = 0
 		}
 	}
 }
