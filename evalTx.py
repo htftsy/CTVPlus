@@ -451,7 +451,7 @@ def eval_bexpr_count(G, tx, b):   # to Int
 	elif b["op"] == "BRI":
 		# To compare two RIs, just take their hash (gas: 30 + 6 * (size of input in words))
 		#    and compare two int256's (gas: 3)
-		if tx["out"][b["lhs"]] < len(G):
+		if b["lhs"] < len(tx["out"]) and tx["out"][b["lhs"]] < len(G):
 			txo = G[tx["out"][b["lhs"]]]
 			return 3 + (30 + 6 * count_op_keys(txo["RI"])) + (30 + 6 * count_op_keys(tx["RI"]))
 		else:

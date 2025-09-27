@@ -64,21 +64,18 @@
 						"lhs": {
 							"op": "Asymx",
 							"n": 0
-						},
-						"rhs": {
-							"op": "Ainp",
-							"lhs": 0,
-							"rhs": {
-								"op": "Asymbol",
-								"lhs": {
-									"op": "Asymx",
-									"n": 0
-								}
-							}
 						}
 					},
 					"rhs": {
-
+						"op": "Ainp",
+						"lhs": 0,
+						"rhs": {
+							"op": "Asymbol",
+							"lhs": {
+								"op": "Asymx",
+								"n": 0
+							}
+						}
 					}
 				}
 			}
