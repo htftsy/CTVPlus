@@ -5,15 +5,51 @@ rhsCase0 = {
 	"lhs": {
 		"op": "Band",
 		"lhs": { # BRI0 [1]
+			"op": "BRI",
+			"lhs": 0,
+			"rhs": [
+				{
+					"op": "Anum",
+					"lhs": 1
+				}
+			]
 		},
 		"rhs": { # BRI1 [1]
+			"op": "BRI",
+			"lhs": 1,
+			"rhs": [
+				{
+					"op": "Anum",
+					"lhs": 1
+				}
+			]
 		}
 	},
 	"rhs": {
 		"op": "Band",
 		"lhs": { # Ver(y_0, sig_0)
+			"op": "BVerG",
+			"lhs": {
+				"op": "Gsymbol",
+				"lhs": {
+					"op": "Gsymy",
+					"n": 0
+				}
+			},
+			"rhs": {
+				"op": "Gsymbol",
+				"lhs": {
+					"op": "Gsigma",
+					"n": 0
+				}
+			}
 		},
 		"rhs": { # oup_2 bot
+			"op": "Boup",
+			"lhs": 2,
+			"rhs": {
+				"op": "Bbot"
+			}
 		}
 	}
 }
@@ -151,4 +187,3 @@ final = {
 		"rhs": rhsCase2
 	}
 }
-

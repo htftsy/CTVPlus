@@ -339,6 +339,18 @@ def eval_bexpr(G, tx, b):   # to "T"/"F"/"U"
 				return "F"
 		else:
 			return "U"
+	elif b["op"] == "BinRI":
+		if b["lhs"] < len(tx["in"]) and tx["in"][b["lhs"]] < len(G):
+			txi = G[tx["in"][b["lhs"]]]
+			evalLam = []
+			for i in range(len(b["rhs"])):
+				evalLam.append(eval_aexpr(G, tx, b["rhs"][i]))
+			if txi["RI"] == tx["RI"] and txi["lambda"] == evalLam:
+				return "T"
+			else:
+				return "F"
+		else:
+			return "U"
 
 def count_op_keys(obj):
     if isinstance(obj, dict):
@@ -402,6 +414,12 @@ def eval_bexpr_count(G, tx, b):   # to Int
 		if tx["out"][b["lhs"]] < len(G):
 			txo = G[tx["out"][b["lhs"]]]
 			return 3 + (30 + 6 * count_op_keys(txo["RI"])) + (30 + 6 * count_op_keys(tx["RI"]))
+		else:
+			return 0
+	elif b["op"] == "BinRI":
+		if tx["in"][b["lhs"]] < len(G):
+			txi = G[tx["in"][b["lhs"]]]
+			return 3 + (30 + 6 * count_op_keys(txi["RI"])) + (30 + 6 * count_op_keys(tx["RI"]))
 		else:
 			return 0
 

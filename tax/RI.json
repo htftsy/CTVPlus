@@ -54,21 +54,41 @@
 		}
 	},
 	"rhs": {
-		"op": "BeqG",
+		"op": "Band",
 		"lhs": {
-			"op": "Goup",
-				"lhs": 2,
-				"rhs": {
-					"op": "Gsymbol",
-					"lhs": {
-						"op": "Gsymy",
-						"n": 0
+			"op": "BeqG",
+			"lhs": {
+				"op": "Goup",
+					"lhs": 2,
+					"rhs": {
+						"op": "Gsymbol",
+						"lhs": {
+							"op": "Gsymy",
+							"n": 0
+						}
 					}
-				}
+			},
+			"rhs": {
+				"op": "Gnum",
+				"lhs": 0
+			}
 		},
 		"rhs": {
-			"op": "Gnum",
-			"lhs": 0
+			"op": "BVerG",
+			"lhs": {
+				"op": "Gsymbol",
+				"lhs": {
+					"op": "Gsymy",
+					"n": 0
+				}
+			},
+			"rhs": {
+				"op": "Gsymbol",
+				"lhs": {
+					"op": "Gsigma",
+					"n": 0
+				}
+			}
 		}
 	}
 }
