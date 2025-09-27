@@ -175,7 +175,7 @@
                         "rhs": [
                             {
                                 "op": "Anum",
-                                "lhs": 2
+                                "lhs": 1
                             }
                         ]
                     }
@@ -188,7 +188,7 @@
                         "rhs": [
                             {
                                 "op": "Anum",
-                                "lhs": 2
+                                "lhs": 1
                             }
                         ]
                     },
@@ -210,7 +210,7 @@
                         "lhs": {
                             "op": "Bto",
                             "lhs": {
-                                "op": "BlessG",
+                                "op": "BlessA",
                                 "lhs": {
                                     "op": "Aabs",
                                     "lhs": {
@@ -281,7 +281,7 @@
                         "rhs": {
                             "op": "Bto",
                             "lhs": {
-                                "op": "BlessG",
+                                "op": "BleeqA",
                                 "lhs": {
                                     "op": "Aabs",
                                     "lhs": {

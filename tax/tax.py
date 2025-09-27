@@ -8,7 +8,8 @@ import time
 
 # Different from the paper (indexing from 1):
 #	we index from 0, hence the RI is:
-#	 inp_1 bot /\ oup_3 bot /\ oup_1 RI /\ 9 * om_2 = om_0 /\ oup_2 y_0 = RECEIVER
+#	 inp_1 bot /\ oup_3 bot /\ oup_1 RI /\ 9 * om_2 = om_0 
+#			   /\ oup_2 y_0 = RECEIVER  /\ Ver(y_0, sig_0)
 
 K0 = tx_load("K0.json") #0
 K1 = tx_load("K1.json") #1

@@ -100,7 +100,7 @@ CorrWin = {
 	"lhs": {
 		"op": "Bto",
 		"lhs": {
-			"op": "BlessG",
+			"op": "BlessA",
 			"lhs": { # |Rnd - inp_0 x_0|
 				"op": "Aabs",
 				"lhs": {
@@ -171,7 +171,7 @@ CorrWin = {
 	"rhs": {
 		"op": "Bto",
 		"lhs": {
-			"op": "BlessG",
+			"op": "BleeqA",
 			"lhs": { # |Rnd - inp_1 x_0|
 				"op": "Aabs",
 				"lhs": {
@@ -264,26 +264,26 @@ rhsCase2 = {
 					}
 				}
 			},
-			"rhs": { # inpRI 0 [2]
+			"rhs": { # inpRI 0 [1]
 				"op": "BinRI",
 				"lhs": 0,
 				"rhs": [
 					{
 						"op": "Anum",
-						"lhs": 2
+						"lhs": 1
 					}
 				]
 			}
 		},
 		"rhs": {
 			"op": "Band",
-			"lhs": { # inpRI 1 [2]
+			"lhs": { # inpRI 1 [1]
 				"op": "BinRI",
 				"lhs": 1,
 				"rhs": [
 					{
 						"op": "Anum",
-						"lhs": 2
+						"lhs": 1
 					}
 				]
 			},

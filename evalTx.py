@@ -193,7 +193,7 @@ def eval_gexpr_count(G, tx, a):
 	elif a['op'] == "Gsymbol" and a["lhs"]["op"] == "Gsymy":
 		return 3
 
-def Kneg(a):
+def Knot(a):
 	if a == "T":
 		return "F"
 	elif a == "F":
@@ -260,7 +260,11 @@ def eval_bexpr(G, tx, b):   # to "T"/"F"/"U"
 	elif b["op"] == "Bor":
 		return Kor(eval_bexpr(G, tx, b["lhs"]), eval_bexpr(G, tx, b["rhs"]))
 	elif b["op"] == "Bto":
-		return Kor(Knot(eval_bexpr(G, tx, b["lhs"])), eval_bexpr(G, tx, b["rhs"]))
+		lhsRes = eval_bexpr(G, tx, b["lhs"])
+		if lhsRes == "F":
+			return "T"
+		else:
+			return Kor(Knot(lhsRes), eval_bexpr(G, tx, b["rhs"]))
 	elif b["op"] == "BeqA":
 		p = eval_aexpr(G, tx, b["lhs"])
 		q = eval_aexpr(G, tx, b["rhs"])
@@ -382,7 +386,10 @@ def eval_bexpr_count(G, tx, b):   # to Int
 	elif b["op"] == "Bor":
 		return 3 + eval_bexpr_count(G, tx, b["lhs"]) + eval_bexpr_count(G, tx, b["rhs"])
 	elif b["op"] == "Bto":
-		return 6 + eval_bexpr_count(G, tx, b["lhs"]) + eval_bexpr_count(G, tx, b["rhs"])
+		if eval_bexpr(G, tx, b["lhs"]) == "F":
+			return 6 + eval_bexpr_count(G, tx, b["lhs"])
+		else:
+			return 6 + eval_bexpr_count(G, tx, b["lhs"]) + eval_bexpr_count(G, tx, b["rhs"])
 	elif b["op"] == "BeqA":
 		return 3 + eval_aexpr_count(G, tx, b["lhs"]) + eval_aexpr_count(G, tx, b["rhs"])
 	elif b["op"] == "BlessA":
