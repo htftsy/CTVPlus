@@ -7,50 +7,48 @@ import json
 import time
 
 # Different from the paper (indexing from 1):
-#	we index from 0
+#	we index from 0 in RI.json
 
-K0 = tx_load("K0.json") #0
-K1 = tx_load("K1.json") #1
-K2 = tx_load("K2.json") #2
-K3 = tx_load("K3.json") #3
+U1 = tx_load("U1.json") #0
+V1 = tx_load("V1.json") #1
+V2 = tx_load("V2.json") #2
+V3 = tx_load("V3.json") #3
 
-U1 = tx_load("U1.json") #4
-U2 = tx_load("U2.json") #5
-U3 = tx_load("U3.json") #6
+U2 = tx_load("U2.json") #4
+U3 = tx_load("U3.json") #5
+V4 = tx_load("V4.json") #6
 
-(G, res0, resCount) = process_tx([], K0, 0)
+(G, res0, resCount) = process_tx([], U1, 0)
 print(res0, resCount)
 
-(G, res1, resCount) = process_tx(G, K1, resCount)
+(G, res1, resCount) = process_tx(G, V1, resCount)
 print(res1, resCount)
 
-(G, res2, resCount) = process_tx(G, K2, resCount)
+(G, res2, resCount) = process_tx(G, V2, resCount)
 print(res2, resCount)
 
-(G, res3, resCount) = process_tx(G, K3, resCount)
+(G, res3, resCount) = process_tx(G, V3, resCount)
 print(res3, resCount)
 
-(G, res4, resCount) = process_tx(G, U1, resCount)
+(G, res4, resCount) = process_tx(G, U2, resCount)
 print(res4, resCount)
 
-(G, res5, resCount) = process_tx(G, U2, resCount)
+(G, res5, resCount) = process_tx(G, U3, resCount)
 print(res5, resCount)
 
-(G, res6, resCount) = process_tx(G, U3, resCount)
+(G, res6, resCount) = process_tx(G, V4, resCount)
 print(res6, resCount)
-
-# json_data = json.dumps(data["lhs"], separators=(",", ":"))
 
 """
 Execution Results:
 ---------
 Tx | Acc.
 ---------
-K0 | 3032
-K1 | 9483
-K2 | 15934
-K3 | 22385
-U1 | 25804
-U2 | 29223
-U3 | 32642
+U1 | 3066
+V1 | 9222
+V2 | 17565
+V3 | 25908
+U2 | 34251
+U3 | 42594
+V4 | 56178
 """

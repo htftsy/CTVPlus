@@ -503,7 +503,7 @@ condiCase3 = {
 		},
 		"rhs": {
 			"op": "Gnum",
-			"n": 1
+			"lhs": 1
 		}
 	},
 	"rhs": {
@@ -536,7 +536,7 @@ final = {
 				"lhs": {
 					"op": "Asymbol",
 					"lhs": {
-						"op": "Aymx",
+						"op": "Asymx",
 						"n": 0
 					}
 				},
@@ -554,7 +554,7 @@ final = {
 				"lhs": {
 					"op": "Asymbol",
 					"lhs": {
-						"op": "Aymx",
+						"op": "Asymx",
 						"n": 0
 					}
 				},
@@ -575,7 +575,7 @@ final = {
 				"lhs": {
 					"op": "Asymbol",
 					"lhs": {
-						"op": "Aymx",
+						"op": "Asymx",
 						"n": 0
 					}
 				},
@@ -593,7 +593,7 @@ final = {
 				"lhs": {
 					"op": "Asymbol",
 					"lhs": {
-						"op": "Aymx",
+						"op": "Asymx",
 						"n": 0
 					}
 				},
