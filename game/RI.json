@@ -1,0 +1,382 @@
+{
+    "op": "Band",
+    "lhs": {
+        "op": "Band",
+        "lhs": {
+            "op": "Bto",
+            "lhs": {
+                "op": "BeqA",
+                "lhs": {
+                    "op": "Asymbol",
+                    "lhs": {
+                        "op": "Asymlam",
+                        "n": 0
+                    }
+                },
+                "rhs": {
+                    "op": "Anum",
+                    "lhs": 0
+                }
+            },
+            "rhs": {
+                "op": "Band",
+                "lhs": {
+                    "op": "Band",
+                    "lhs": {
+                        "op": "BRI",
+                        "lhs": 0,
+                        "rhs": [
+                            {
+                                "op": "Anum",
+                                "lhs": 1
+                            }
+                        ]
+                    },
+                    "rhs": {
+                        "op": "BRI",
+                        "lhs": 1,
+                        "rhs": [
+                            {
+                                "op": "Anum",
+                                "lhs": 1
+                            }
+                        ]
+                    }
+                },
+                "rhs": {
+                    "op": "Band",
+                    "lhs": {
+                        "op": "BVerG",
+                        "lhs": {
+                            "op": "Gsymbol",
+                            "lhs": {
+                                "op": "Gsymy",
+                                "n": 0
+                            }
+                        },
+                        "rhs": {
+                            "op": "Gsymbol",
+                            "lhs": {
+                                "op": "Gsigma",
+                                "n": 0
+                            }
+                        }
+                    },
+                    "rhs": {
+                        "op": "Boup",
+                        "lhs": 2,
+                        "rhs": {
+                            "op": "Bbot"
+                        }
+                    }
+                }
+            }
+        },
+        "rhs": {
+            "op": "Bto",
+            "lhs": {
+                "op": "BeqA",
+                "lhs": {
+                    "op": "Asymbol",
+                    "lhs": {
+                        "op": "Asymlam",
+                        "n": 0
+                    }
+                },
+                "rhs": {
+                    "op": "Anum",
+                    "lhs": 1
+                }
+            },
+            "rhs": {
+                "op": "Band",
+                "lhs": {
+                    "op": "Band",
+                    "lhs": {
+                        "op": "BRI",
+                        "lhs": 0,
+                        "rhs": [
+                            {
+                                "op": "Anum",
+                                "lhs": 2
+                            }
+                        ]
+                    },
+                    "rhs": {
+                        "op": "BVerG",
+                        "lhs": {
+                            "op": "Gsymbol",
+                            "lhs": {
+                                "op": "Gsymy",
+                                "n": 0
+                            }
+                        },
+                        "rhs": {
+                            "op": "Gsymbol",
+                            "lhs": {
+                                "op": "Gsigma",
+                                "n": 0
+                            }
+                        }
+                    }
+                },
+                "rhs": {
+                    "op": "Boup",
+                    "lhs": 1,
+                    "rhs": {
+                        "op": "Bbot"
+                    }
+                }
+            }
+        }
+    },
+    "rhs": {
+        "op": "Bto",
+        "lhs": {
+            "op": "BeqA",
+            "lhs": {
+                "op": "Asymbol",
+                "lhs": {
+                    "op": "Asymlam",
+                    "n": 0
+                }
+            },
+            "rhs": {
+                "op": "Anum",
+                "lhs": 2
+            }
+        },
+        "rhs": {
+            "op": "Band",
+            "lhs": {
+                "op": "Band",
+                "lhs": {
+                    "op": "Band",
+                    "lhs": {
+                        "op": "BVerG",
+                        "lhs": {
+                            "op": "Gsymbol",
+                            "lhs": {
+                                "op": "Gsymy",
+                                "n": 0
+                            }
+                        },
+                        "rhs": {
+                            "op": "Gsymbol",
+                            "lhs": {
+                                "op": "Gsigma",
+                                "n": 0
+                            }
+                        }
+                    },
+                    "rhs": {
+                        "op": "BinRI",
+                        "lhs": 0,
+                        "rhs": [
+                            {
+                                "op": "Anum",
+                                "lhs": 2
+                            }
+                        ]
+                    }
+                },
+                "rhs": {
+                    "op": "Band",
+                    "lhs": {
+                        "op": "BinRI",
+                        "lhs": 1,
+                        "rhs": [
+                            {
+                                "op": "Anum",
+                                "lhs": 2
+                            }
+                        ]
+                    },
+                    "rhs": {
+                        "op": "Binp",
+                        "lhs": 2,
+                        "rhs": {
+                            "op": "Bbot"
+                        }
+                    }
+                }
+            },
+            "rhs": {
+                "op": "Band",
+                "lhs": {
+                    "op": "Band",
+                    "lhs": {
+                        "op": "Band",
+                        "lhs": {
+                            "op": "Bto",
+                            "lhs": {
+                                "op": "BlessG",
+                                "lhs": {
+                                    "op": "Aabs",
+                                    "lhs": {
+                                        "op": "Asub",
+                                        "lhs": {
+                                            "op": "ARnd"
+                                        },
+                                        "rhs": {
+                                            "op": "Ainp",
+                                            "lhs": 0,
+                                            "rhs": {
+                                                "op": "Asymbol",
+                                                "lhs": {
+                                                    "op": "Asymx",
+                                                    "n": 0
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "rhs": {
+                                    "op": "Aabs",
+                                    "lhs": {
+                                        "op": "Asub",
+                                        "lhs": {
+                                            "op": "ARnd"
+                                        },
+                                        "rhs": {
+                                            "op": "Ainp",
+                                            "lhs": 1,
+                                            "rhs": {
+                                                "op": "Asymbol",
+                                                "lhs": {
+                                                    "op": "Asymx",
+                                                    "n": 0
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "rhs": {
+                                "op": "BeqG",
+                                "lhs": {
+                                    "op": "Goup",
+                                    "lhs": 0,
+                                    "rhs": {
+                                        "op": "Gsymbol",
+                                        "lhs": {
+                                            "op": "Gsymy",
+                                            "n": 0
+                                        }
+                                    }
+                                },
+                                "rhs": {
+                                    "op": "Ginp",
+                                    "lhs": 0,
+                                    "rhs": {
+                                        "op": "Gsymbol",
+                                        "lhs": {
+                                            "op": "Gsymy",
+                                            "n": 0
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "rhs": {
+                            "op": "Bto",
+                            "lhs": {
+                                "op": "BlessG",
+                                "lhs": {
+                                    "op": "Aabs",
+                                    "lhs": {
+                                        "op": "Asub",
+                                        "lhs": {
+                                            "op": "ARnd"
+                                        },
+                                        "rhs": {
+                                            "op": "Ainp",
+                                            "lhs": 1,
+                                            "rhs": {
+                                                "op": "Asymbol",
+                                                "lhs": {
+                                                    "op": "Asymx",
+                                                    "n": 0
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "rhs": {
+                                    "op": "Aabs",
+                                    "lhs": {
+                                        "op": "Asub",
+                                        "lhs": {
+                                            "op": "ARnd"
+                                        },
+                                        "rhs": {
+                                            "op": "Ainp",
+                                            "lhs": 0,
+                                            "rhs": {
+                                                "op": "Asymbol",
+                                                "lhs": {
+                                                    "op": "Asymx",
+                                                    "n": 0
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "rhs": {
+                                "op": "BeqG",
+                                "lhs": {
+                                    "op": "Goup",
+                                    "lhs": 0,
+                                    "rhs": {
+                                        "op": "Gsymbol",
+                                        "lhs": {
+                                            "op": "Gsymy",
+                                            "n": 0
+                                        }
+                                    }
+                                },
+                                "rhs": {
+                                    "op": "Ginp",
+                                    "lhs": 1,
+                                    "rhs": {
+                                        "op": "Gsymbol",
+                                        "lhs": {
+                                            "op": "Gsymy",
+                                            "n": 0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "rhs": {
+                        "op": "Boup",
+                        "lhs": 1,
+                        "rhs": {
+                            "op": "Bbot"
+                        }
+                    }
+                },
+                "rhs": {
+                    "op": "BeqA",
+                    "lhs": {
+                        "op": "Aoup",
+                        "lhs": 0,
+                        "rhs": {
+                            "op": "Asymbol",
+                            "lhs": {
+                                "op": "Asymom",
+                                "n": 1
+                            }
+                        }
+                    },
+                    "rhs": {
+                        "op": "Anum",
+                        "lhs": 0
+                    }
+                }
+            }
+        }
+    }
+}

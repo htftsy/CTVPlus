@@ -18,6 +18,8 @@ def eval_aexpr(G, tx, a):
 		return 1 - eval_aexpr(G, tx, a["lhs"])
 	elif a['op'] == "Aadd":
 		return eval_aexpr(G, tx, a["lhs"]) + eval_aexpr(G, tx, a["rhs"])
+	elif a['op'] == "Asub":
+		return eval_aexpr(G, tx, a["lhs"]) - eval_aexpr(G, tx, a["rhs"])
 	elif a['op'] == "Amul":
 		return eval_aexpr(G, tx, a["lhs"]) * eval_aexpr(G, tx, a["rhs"])
 	elif a['op'] == "Apow":
@@ -68,6 +70,8 @@ def eval_aexpr_count(G, tx, a):
 		return 3 + eval_aexpr_count(G, tx, a["lhs"])
 	elif a['op'] == "Aadd":
 		return 3 + eval_aexpr_count(G, tx, a["lhs"]) + eval_aexpr_count(G, tx, a["rhs"])
+	elif a['op'] == "Asub":
+		return 3 + eval_aexpr_count(G, tx, a["lhs"]) - eval_aexpr_count(G, tx, a["rhs"])
 	elif a['op'] == "Amul":
 		return 5 + eval_aexpr_count(G, tx, a["lhs"]) + eval_aexpr_count(G, tx, a["rhs"])
 	elif a['op'] == "Apow":
