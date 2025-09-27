@@ -59,11 +59,39 @@ rhsCase1 = {
 	"lhs": {
 		"op": "Band",
 		"lhs": { # BRI0 [2]
+			"op": "BRI",
+			"lhs": 0,
+			"rhs": [
+				{
+					"op": "Anum",
+					"lhs": 2
+				}
+			]
 		},
 		"rhs": { # Ver(y_0, sig_0)
+			"op": "BVerG",
+			"lhs": {
+				"op": "Gsymbol",
+				"lhs": {
+					"op": "Gsymy",
+					"n": 0
+				}
+			},
+			"rhs": {
+				"op": "Gsymbol",
+				"lhs": {
+					"op": "Gsigma",
+					"n": 0
+				}
+			}
 		}
 	},
 	"rhs": { # oup_1 bot
+		"op": "Boup",
+		"lhs": 1,
+		"rhs": {
+			"op": "Bbot"
+		}
 	}
 }
 
