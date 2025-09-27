@@ -15,19 +15,48 @@ def eval_aexpr(G, tx, a):
 	if a["op"] == "Anum":
 		return a["lhs"]
 	elif a['op'] == "Aneg":
-		return 1 - eval_aexpr(G, tx, a["lhs"])
+		lhs = eval_aexpr(G, tx, a["lhs"])
+		if lhs == -1:
+			return -1
+		else:
+			return 1 - lhs
 	elif a['op'] == "Aadd":
-		return eval_aexpr(G, tx, a["lhs"]) + eval_aexpr(G, tx, a["rhs"])
+		lhs = eval_aexpr(G, tx, a["lhs"])
+		rhs = eval_aexpr(G, tx, a["rhs"])
+		if lhs == -1 or rhs == -1:
+			return -1
+		else:
+			return lhs + rhs
 	elif a['op'] == "Asub":
-		return eval_aexpr(G, tx, a["lhs"]) - eval_aexpr(G, tx, a["rhs"])
+		lhs = eval_aexpr(G, tx, a["lhs"])
+		rhs = eval_aexpr(G, tx, a["rhs"])
+		if lhs == -1 or rhs == -1:
+			return -1
+		else:
+			return lhs - rhs
 	elif a['op'] == "Amul":
-		return eval_aexpr(G, tx, a["lhs"]) * eval_aexpr(G, tx, a["rhs"])
+		lhs = eval_aexpr(G, tx, a["lhs"])
+		rhs = eval_aexpr(G, tx, a["rhs"])
+		if lhs == -1 or rhs == -1:
+			return -1
+		else:
+			return lhs * rhs
 	elif a['op'] == "Apow":
-		return eval_aexpr(G, tx, a["lhs"]) ** eval_aexpr(G, tx, a["rhs"])
+		lhs = eval_aexpr(G, tx, a["lhs"])
+		rhs = eval_aexpr(G, tx, a["rhs"])
+		if lhs == -1 or rhs == -1:
+			return -1
+		else:
+			return lhs ** rhs
 	elif a['op'] == "Ahash1":
 		return eval_aexpr(G, tx, a["lhs"]) # simulate
 	elif a['op'] == "Ahash2":
-		return eval_aexpr(G, tx, a["lhs"]) + eval_aexpr(G, tx, a["rhs"])
+		lhs = eval_aexpr(G, tx, a["lhs"])
+		rhs = eval_aexpr(G, tx, a["rhs"])
+		if lhs == -1 or rhs == -1:
+			return -1
+		else:
+			return lhs + rhs
 	elif a['op'] == "Aabs":
 		return abs(eval_aexpr(G, tx, a["lhs"]))
 	elif a['op'] == "Ainp":
