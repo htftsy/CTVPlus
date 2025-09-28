@@ -1,4 +1,4 @@
-# CTV+: Recursive Modal Invariants for Enforcing End-to-End Multi-Step UTXO Token Flows
+# Recursive Invariants for Multi-Step UTXO Transactions
 
 > ⚠️ **Research Project Disclaimer**  
 > This project is for **research purposes only**. It is a prototype and not intended for production use.  
