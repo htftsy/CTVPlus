@@ -1,4 +1,4 @@
-(* Coq-Platform Version: 8.19 . 2024.10 - MacOS - arm64 *)
+(* Coq-Platform Version: 8.19 . 2025.9 - MacOS - arm64 *)
 
 Require Import Coq.micromega.Psatz.
 Require Import Coq.Classes.Morphisms.
@@ -407,7 +407,7 @@ Proof.
   unfold validity in H.
   unfold validity.
   simpl in H.
-  destruct (bEval L tx p) eqn:H1; destruct (bEval L tx q) eqn:H2; auto.
+  destruct (bEval L tx q) eqn:H1; destruct (bEval L tx p) eqn:H2; auto.
 Qed.
 
 Theorem inner_D_i: forall L tx p q, validity L tx p -> validity L tx (Bor p q).
@@ -416,6 +416,14 @@ Proof.
   unfold validity in H; unfold validity.
   simpl.
   destruct (bEval L tx p) eqn:H1; destruct (bEval L tx q) eqn:H2; auto.
+Qed.
+
+Theorem inner_D_i2: forall L tx p q, validity L tx q -> validity L tx (Bor p q).
+Proof.
+  intros.
+  unfold validity in H; unfold validity.
+  simpl.
+  destruct (bEval L tx q) eqn:H1; destruct (bEval L tx p) eqn:H2; auto.
 Qed.
 
 Theorem inner_C_intro: forall L tx p q, validity L tx p /\ validity L tx q -> validity L tx (Band p q).
@@ -707,4 +715,128 @@ Proof.
   unfold validity; intros.
   split; simpl; unfold Kand; unfold Kneg;
   destruct (bEval L tx q) eqn:eq0; destruct (bEval L tx p1) eqn:eq1; destruct (bEval L tx p2) eqn:eq2; auto.
+Qed.
+
+Inductive proves: Ledger -> Tx -> bexpr -> Prop :=
+| R_C_i: forall L tx p q, 
+    proves L tx (Band p q) -> (proves L tx p)
+| R_C_i2: forall L tx p q, 
+    proves L tx (Band p q) -> (proves L tx q)
+| R_D_i: forall L tx p q, 
+    proves L tx p -> proves L tx (Bor p q)
+| R_D_i2: forall L tx p q, 
+    proves L tx q -> proves L tx (Bor p q)
+| R_C_intro: forall L tx p q, 
+    proves L tx p -> proves L tx q -> proves L tx (Band p q)
+| R_to_intro: forall L tx p q, 
+    proves L tx p -> proves L tx q -> proves L tx (Bto p q)
+| R_to_intro2: forall L tx p q, 
+    proves L tx (Bor (Bneg p) q) -> proves L tx (Bto p q)
+| R_to_intro2_rev: forall L tx p q, 
+    proves L tx (Bto p q) -> proves L tx (Bor (Bneg p) q)
+| R_D_intro: forall L tx p1 p2 q, 
+    proves L tx (Bto p1 q) -> proves L tx (Bto p2 q) 
+                           -> proves L tx (Bto (Band p1 p2) q)
+| R_D_intro_i: forall L tx p q, 
+    proves L tx p -> proves L tx (Bor p q)
+| R_D_intro_i2: forall L tx p q, 
+    proves L tx q -> proves L tx (Bor p q)
+| R_ex_falso_quodlibet: forall L tx p, 
+    proves L tx Bbot -> proves L tx p
+| R_C_V: forall L tx p q i, 
+    proves L tx (Boup i (Band p q)) -> 
+    proves L tx (Band (Boup i p) (Boup i q))
+| R_C_V_rev: forall L tx p q i, 
+    proves L tx (Band (Boup i p) (Boup i q)) -> 
+    proves L tx (Boup i (Band p q))
+| R_D_V: forall L tx p q i, 
+    proves L tx (Boup i (Bor p q)) -> 
+    proves L tx (Bor (Boup i p) (Boup i q))
+| R_D_V_rev: forall L tx p q i, 
+    proves L tx (Bor (Boup i p) (Boup i q)) -> 
+    proves L tx (Boup i (Bor p q)) 
+| R_K: forall L tx i p q, 
+    proves L tx (Boup i (Bto p q)) -> 
+    proves L tx (Bto (Boup i p) (Boup i q))
+| R_K_rev: forall L tx i p q, 
+    proves L tx (Bto (Boup i p) (Boup i q)) -> 
+    proves L tx (Boup i (Bto p q))
+| R_C_V_inp: forall L tx p q i, 
+    proves L tx (Binp i (Band p q)) -> 
+    proves L tx (Band (Binp i p) (Binp i q))
+| R_C_V_inp_rev: forall L tx p q i, 
+    proves L tx (Band (Binp i p) (Binp i q)) -> 
+    proves L tx (Binp i (Band p q))
+| R_D_V_inp: forall L tx p q i, 
+    proves L tx (Binp i (Bor p q)) -> 
+    proves L tx (Bor (Binp i p) (Binp i q))
+| R_D_V_inp_rev: forall L tx p q i, 
+    proves L tx (Bor (Binp i p) (Binp i q)) -> 
+    proves L tx (Binp i (Bor p q))
+| R_K_inp: forall L tx i p q, 
+    proves L tx (Binp i (Bto p q)) -> 
+    proves L tx (Bto (Binp i p) (Binp i q))
+| R_K_inp_rev: forall L tx i p q, 
+    proves L tx (Bto (Binp i p) (Binp i q)) -> 
+    proves L tx (Binp i (Bto p q))
+| R_T: forall L tx p1 p2 q, 
+    proves L tx (Bto p1 (Bto p2 q)) -> 
+    proves L tx (Bto (Band p1 p2) q)
+| R_exclus_middle: forall L tx p, 
+    proves L tx (Bor p (Bneg p))
+| R_de_morgan: forall L tx p q, 
+    proves L tx (Bneg (Bor p q)) -> 
+    proves L tx (Band (Bneg p) (Bneg q))
+| R_de_morgan_rev: forall L tx p q, 
+    proves L tx (Band (Bneg p) (Bneg q)) -> 
+    proves L tx (Bneg (Bor p q))
+| R_de_morgan2: forall L tx p q, 
+    proves L tx (Bneg (Band p q)) -> 
+    proves L tx (Bor (Bneg p) (Bneg q))
+| R_de_morgan2_rev: forall L tx p q, 
+    proves L tx (Bor (Bneg p) (Bneg q)) -> 
+    proves L tx (Bneg (Band p q))
+| R_distribution1: forall L tx p1 p2 q, 
+    proves L tx (Band (Bor p1 p2) q) -> 
+    proves L tx (Bor (Band p1 q) (Band p2 q))
+| R_distribution2: forall L tx p1 p2 q, 
+    proves L tx (Bor (Band p1 q) (Band p2 q)) -> 
+    proves L tx (Band (Bor p1 p2) q).
+
+Theorem Soundness: forall L tx p, proves L tx p -> validity L tx p.
+Proof.
+intros.
+induction H.
+- apply inner_C_i in IHproves. exact IHproves.
+- apply inner_C_i2 in IHproves. exact IHproves.
+- apply inner_D_i. exact IHproves.
+- apply inner_D_i2. exact IHproves.
+- apply inner_C_intro. auto.
+- apply inner_to_intro; auto.
+- apply -> inner_to_intro2 in IHproves. exact IHproves.
+- apply inner_to_intro2 in IHproves. exact IHproves.
+- apply inner_D_intro; auto.
+- apply inner_D_intro_i. left. exact IHproves.
+- apply inner_D_intro_i. right. exact IHproves.
+- apply inner_ex_falso_quodlibet. exact IHproves.
+- apply inner_C_V. exact IHproves.
+- apply inner_C_V_bi in IHproves. exact IHproves.
+- apply inner_D_V. exact IHproves.
+- apply inner_D_V_bi in IHproves. exact IHproves.
+- apply inner_K. exact IHproves.
+- apply inner_K_bi. exact IHproves.
+- apply inner_C_V_inp_bi. exact IHproves.
+- apply inner_C_V_inp_bi in IHproves. exact IHproves.
+- apply inner_D_V_inp_bi. exact IHproves.
+- apply inner_D_V_inp_bi in IHproves. exact IHproves.
+- apply inner_K_inp_bi. exact IHproves.
+- apply inner_K_inp_bi. exact IHproves.
+- apply inner_T. exact IHproves.
+- apply inner_exclus_middle.
+- apply inner_de_morgan. exact IHproves.
+- apply inner_de_morgan. exact IHproves.
+- apply ->inner_de_morgan2. exact IHproves.
+- apply inner_de_morgan2. exact IHproves.
+- apply inner_distribution. exact IHproves.
+- apply inner_distribution. exact IHproves.
 Qed.

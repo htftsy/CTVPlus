@@ -2,7 +2,7 @@
 
 pragma solidity =0.8.27;
 
-contract collPay {
+contract game {
     address private owner;
     address payable public player0;
     address payable public player1;
