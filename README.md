@@ -1,4 +1,4 @@
-CTV$^+$: Recursive Modal Invariants for Enforcing End-to-End Multi-Step UTXO Token Flows
+CTV*^+*: Recursive Modal Invariants for Enforcing End-to-End Multi-Step UTXO Token Flows
 ==
 
 Structure
@@ -9,7 +9,7 @@ Structure
 
 Each other folder (say, '/hashVote') studies one application:
 * 'RI.json' is the abstract syntax tree (AST) of a recursive invariant (RI) in our DSL
-* 'K0.json' -- 'K3.json' stand for transactions (named by demonstrative figures of the paper)
+* 'K0.json' - 'K3.json' stand for transactions (named by demonstrative figures of the paper)
 * 'hashVote.py' verifies the transactions against their RIs and summarize the (accumulative) costs
 * 'hasVote.sol' implements the same application via Ethereum smart contracts
 
