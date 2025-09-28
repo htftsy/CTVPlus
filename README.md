@@ -3,7 +3,7 @@
 > ⚠️ **Research Project Disclaimer**  
 > This project is for **research purposes only**. It is a prototype and not intended for production use.  
 
-## Project Structure
+## Structure
 
 - **`/CoqVrf`**  
   Contains the Coq proof files.  
