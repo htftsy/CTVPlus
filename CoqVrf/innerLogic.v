@@ -1,4 +1,4 @@
-(* Coq-Platform Version: 8.19 . 2025.9 - MacOS - arm64 *)
+(* Coq-Platform Version: 8.19 . 2024.10 - MacOS - arm64 *)
 
 Require Import Coq.micromega.Psatz.
 Require Import Coq.Classes.Morphisms.
