@@ -835,7 +835,7 @@ induction H.
 - apply inner_exclus_middle.
 - apply inner_de_morgan. exact IHproves.
 - apply inner_de_morgan. exact IHproves.
-- apply ->inner_de_morgan2. exact IHproves.
+- apply -> inner_de_morgan2. exact IHproves.
 - apply inner_de_morgan2. exact IHproves.
 - apply inner_distribution. exact IHproves.
 - apply inner_distribution. exact IHproves.
