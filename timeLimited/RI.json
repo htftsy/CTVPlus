@@ -93,7 +93,7 @@
 				}
 			},
 			"rhs": {
-				"op": "Aomega"
+				"op": "ALambda"
 			}
 		},
 		"rhs": {

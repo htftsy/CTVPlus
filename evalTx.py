@@ -73,7 +73,7 @@ def eval_aexpr(G, tx, a):
 			return eval_aexpr(G, G[tx["out"][a["lhs"]]], a["rhs"])
 		else:
 			return -1
-	elif a['op'] == "Aomega":
+	elif a['op'] == "ALambda":
 		return time.time()
 	elif a['op'] == "ARnd":
 		return time.time()
@@ -129,7 +129,7 @@ def eval_aexpr_count(G, tx, a):
 			return eval_aexpr_count(G, G[tx["out"][a["lhs"]]], a["rhs"])
 		else:
 			return 0
-	elif a['op'] == "Aomega":
+	elif a['op'] == "ALambda":
 		return 2  # TIMESTAMP
 	elif a['op'] == "ARnd":
 		return 20 # BLOCKHASH
