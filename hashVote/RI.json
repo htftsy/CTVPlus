@@ -94,33 +94,33 @@
 		"rhs": {
 			"op": "Bor",
 			"lhs": {
-				"_hint": "x_0 = oup_0 x_0 + 1 and x_1 = oup_0 x_1",
+				"_hint": "x_0 + 1 = oup_0 x_0 and x_1 = oup_0 x_1",
 				"op": "Band",
 				"lhs": {
 					"op": "BeqA",
 					"lhs": {
-						"op": "Asymbol",
-						"lhs": {
-							"op": "Asymx",
-							"n": 0
-						}
-					},
-					"rhs": {
 						"op": "Aadd",
 						"lhs": {
-							"op": "Aoup",
-							"lhs": 0,
-							"rhs": {
-								"op": "Asymbol",
-								"lhs": {
-									"op": "Asymx",
-									"n": 0
-								}
+							"op": "Asymbol",
+							"lhs": {
+								"op": "Asymx",
+								"n": 0
 							}
 						},
 						"rhs": {
 							"op": "Anum",
 							"lhs": 1
+						}
+					},
+					"rhs": {
+						"op": "Aoup",
+						"lhs": 0,
+						"rhs": {
+							"op": "Asymbol",
+							"lhs": {
+								"op": "Asymx",
+								"n": 0
+							}
 						}
 					}
 				},
@@ -147,33 +147,33 @@
 				}
 			},
 			"rhs": {
-				"_hint": "x_1 = oup_0 x_1 + 1 and x_0 = oup_0 x_0",
+				"_hint": "x_1 + 1= oup_0 x_1 and x_0 = oup_0 x_0",
 				"op": "Band",
 				"lhs": {
 					"op": "BeqA",
 					"lhs": {
-						"op": "Asymbol",
-						"lhs": {
-							"op": "Asymx",
-							"n": 1
-						}
-					},
-					"rhs": {
 						"op": "Aadd",
 						"lhs": {
-							"op": "Aoup",
-							"lhs": 0,
-							"rhs": {
-								"op": "Asymbol",
-								"lhs": {
-									"op": "Asymx",
-									"n": 1
-								}
+							"op": "Asymbol",
+							"lhs": {
+								"op": "Asymx",
+								"n": 1
 							}
 						},
 						"rhs": {
 							"op": "Anum",
 							"lhs": 1
+						}
+					},
+					"rhs": {
+						"op": "Aoup",
+						"lhs": 0,
+						"rhs": {
+							"op": "Asymbol",
+							"lhs": {
+								"op": "Asymx",
+								"n": 1
+							}
 						}
 					}
 				},

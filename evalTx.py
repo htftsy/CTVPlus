@@ -276,6 +276,7 @@ def Kto(a, b):
 	return Kor(Knot(a), b)
 
 def eval_bexpr(G, tx, b):   # to "T"/"F"/"U"
+
 	if b["op"] == "Bneg":
 		return Knot(eval_bexpr(G, tx, b["lhs"]))
 	elif b["op"] == "Bbot":
@@ -390,6 +391,7 @@ def eval_bexpr(G, tx, b):   # to "T"/"F"/"U"
 			return "U"
 
 def count_op_keys(obj):
+
     if isinstance(obj, dict):
         # Count "op" in this dict + recurse into values
         return (1 if "op" in obj else 0) + sum(count_op_keys(v) for v in obj.values())
@@ -400,6 +402,7 @@ def count_op_keys(obj):
         return 0
 
 def eval_bexpr_count(G, tx, b):   # to Int
+
 	if b["op"] == "Bneg":
 		return 3 + eval_bexpr_count(G, tx, b["lhs"])
 	elif b["op"] == "Bbot":
@@ -464,19 +467,43 @@ def eval_bexpr_count(G, tx, b):   # to Int
 			return 0
 
 def process_tx(G, tx, accumulateCount):
+
+	m = len(tx["in"])
+	if len(tx["im"]) < m:
+		return (G, "F", accumulateCount)
+
+	if not all(tx0["id"] != tx["id"] for tx0 in G):
+		return (G, "F", accumulateCount)
+
+	for j in tx["in"]:
+		if j != 0 and all(tx0["id"] != j for tx0 in G):
+			return (G, "F", accumulateCount)
+
 	G = G + [tx]
 	# tx's shall be added in order
-	res = eval_bexpr(G, tx, tx["RI"])
+	res = "T"
+	if sum(tx["im"]) < sum(tx["om"]):
+		res = "F"
+	if eval_bexpr(G, tx, tx["RI"]) == "F":
+		res = "F"
+
 	resCount = eval_bexpr_count(G, tx, tx["RI"])
+
 	if res:
 		inpList = tx["in"]
 		for i in inpList:
 			assert i < len(G)
+			if sum(G[i]["im"]) < sum(G[i]["om"]):
+				res = "F"
 			prevRes = eval_bexpr(G, G[i], G[i]["RI"])
 			resCount += eval_bexpr_count(G, G[i], G[i]["RI"])
-			if not prevRes:
-				res = False
+			if prevRes == "F":
+				res = "F"
 				break
+
+	if res == "F":
+		G.pop()
+
 	return (G, res, resCount + accumulateCount)
 
 def tx_load(addr):

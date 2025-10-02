@@ -24,24 +24,48 @@ condiCase0 = {
 		"rhs": {
 			"op": "Band",
 			"lhs": {
-				"op": "BeqA",
+				"op": "Bto",
 				"lhs": {
-					"op": "Aoup",
-					"lhs": 0,
-					"rhs": {
-						"op": "Asymbol",
+					"op": "Bneg",
+					"lhs": {
+						"op": "BeqA",
 						"lhs": {
-							"op": "Asymx",
-							"n": 1
+							"op": "Aoup",
+							"lhs": 0,
+							"rhs": {
+								"op": "Asymbol",
+								"lhs": {
+									"op": "Asymx",
+									"n": 0
+								}
+							}
+						},
+						"rhs": {
+							"op": "Anum",
+							"lhs": 2
 						}
 					}
 				},
 				"rhs": {
-					"op": "Asymbol",
-						"lhs": {
-							"op": "Asymx",
-							"n": 1
+					"op": "BeqA",
+					"lhs": {
+						"op": "Aoup",
+						"lhs": 0,
+						"rhs": {
+							"op": "Asymbol",
+							"lhs": {
+								"op": "Asymx",
+								"n": 1
+							}
 						}
+					},
+					"rhs": {
+						"op": "Asymbol",
+							"lhs": {
+								"op": "Asymx",
+								"n": 1
+							}
+					}
 				}
 			},
 			"rhs": {
@@ -498,7 +522,7 @@ condiCase3 = {
 			"op": "Gsymbol",
 			"lhs": {
 				"op": "Gsymy",
-				"n": 1
+				"n": 0
 			}
 		},
 		"rhs": {
