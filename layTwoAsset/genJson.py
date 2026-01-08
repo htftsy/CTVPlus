@@ -549,7 +549,7 @@ condiCase3 = {
 	}
 }
 
-final = {
+bundle = {
 	"op": "Band",
 	"lhs": {
 		"op": "Band",
@@ -627,6 +627,42 @@ final = {
 				}
 			},
 			"rhs": condiCase3
+		}
+	}
+}
+
+final = {
+	"op": "Band",
+	"lhs": bundle,
+	"rhs": {
+		"op": "Band",
+		"lhs": {
+			"op": "BleeqA",
+			"lhs": {
+				"op": "Anum",
+				"lhs": 0
+			},
+			"rhs": {
+				"op": "Asymbol",
+				"lhs": {
+					"op": "Asymx",
+					"n": 0
+				}
+			}
+		},
+		"rhs": {
+			"op": "BleeqA",
+			"lhs": {
+				"op": "Asymbol",
+				"lhs": {
+					"op": "Asymx",
+					"n": 0
+				}
+			},
+			"rhs": {
+				"op": "Anum",
+				"lhs": 3
+			}
 		}
 	}
 }

@@ -68,7 +68,7 @@
 		"rhs": {
 			"op": "Band",
 			"lhs": {
-				"_hint": "oup_0 y_2 = y_2",
+				"_hint": "oup_0 y_2 = y_1 ^ y_3",
 				"op": "BeqG",
 				"lhs": {
 					"op": "Goup",
@@ -82,10 +82,20 @@
 					}
 				},
 				"rhs": {
-					"op": "Gsymbol",
+					"op": "Gpow",
 					"lhs": {
-						"op": "Gsymy",
-						"n": 2
+						"op": "Gsymbol",
+						"lhs": {
+							"op": "Gsymy",
+							"n": 1
+						}
+					},
+					"rhs": {
+						"op": "Gsymbol",
+						"lhs": {
+							"op": "Gsymy",
+							"n": 3
+						}
 					}
 				}
 			},

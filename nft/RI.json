@@ -1,0 +1,172 @@
+{
+	"op": "Band",
+	"lhs": {
+		"op": "Bto",
+		"lhs": {
+			"op": "BinRI",
+			"lhs": 0,
+			"rhs": [
+			]
+		},
+		"rhs": {
+			"op": "Band",
+			"lhs": {
+				"op": "Band",
+				"lhs": {
+					"op": "Boup",
+					"lhs": 1,
+					"rhs": {
+						"op": "Bbot"
+					}
+				},
+				"rhs": {
+					"op": "BeqA",
+					"lhs": {
+						"op": "Aoup",
+						"lhs": 0,
+						"rhs": {
+							"op": "Asymbol",
+							"lhs": {
+								"op": "Asymx",
+								"n": 0
+							}
+						}
+					},
+					"rhs": {
+						"op": "Anum",
+						"lhs": 1
+					}
+				}
+			},
+			"rhs": { 
+				"op": "Band",
+				"lhs": {
+					"op": "Bto",
+					"lhs": {
+						"op": "BeqA",
+						"lhs": {
+							"op": "Asymbol",
+							"lhs": {
+								"op": "Asymx",
+								"n": 0
+							}
+						},
+						"rhs": {
+							"op": "Anum",
+							"lhs": 1
+						}
+					},
+					"rhs": {
+						"op": "Band",
+						"lhs": {
+							"op": "BeqA",
+							"lhs": {
+								"op": "Aoup",
+								"lhs": 0,
+								"rhs": {
+									"op": "Asymbol",
+									"lhs": {
+										"op": "Asymx",
+										"n": 1
+									}
+								}
+							},
+							"rhs": {
+								"op": "Asymbol",
+								"lhs": {
+									"op": "Asymx",
+									"n": 1
+								}
+							}
+						},
+						"rhs": {
+							"op": "BeqG",
+							"lhs": {
+								"op": "Goup",
+								"lhs": 0,
+								"rhs": {
+									"op": "Gsymbol",
+									"lhs": {
+										"op": "Gsymy",
+										"n": 0
+									}
+								}
+							},
+							"rhs": {
+								"op": "Gsymbol",
+								"lhs": {
+									"op": "Gsymy",
+									"n": 1
+								}
+							}
+						}
+					}
+				},
+				"rhs": {
+					"op": "Bto",
+					"lhs": {
+						"op": "Bneg",
+						"lhs": {
+							"op": "BeqA",
+							"lhs": {
+								"op": "Asymbol",
+								"lhs": {
+									"op": "Asymx",
+									"n": 0
+								}
+							},
+							"rhs": {
+								"op": "Anum",
+								"lhs": 1
+							}
+						}
+					},
+					"rhs": {
+						"op": "Band",
+						"lhs": {
+							"op": "BVerG",
+							"lhs": {
+								"op": "Gnum",
+								"lhs": 0
+							},
+							"rhs": {
+								"op": "Gnum",
+								"lhs": 0
+							}
+						},
+						"rhs": {
+							"op": "Bneg",
+							"lhs": {
+								"op": "Binp",
+								"lhs": 0,
+								"rhs": {
+									"op": "BinRI",
+									"lhs": 0,
+									"rhs": [
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"rhs": {
+		"op": "BVerG",
+		"lhs": {
+			"op": "Gsymbol",
+			"lhs": {
+				"op": "Gsymy",
+				"n": 0
+			}
+		},
+		"rhs": {
+			"op": "Gsymbol",
+			"lhs": {
+				"op": "Gsigma",
+				"n": 0
+			}
+		}
+	}
+}
